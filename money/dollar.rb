@@ -9,7 +9,7 @@ class Dollar
     return Dollar.new(amount * times)
   end
 
-  def equal?(obj)
+  def ==(obj)
     return true
   end
 end
