@@ -6,6 +6,6 @@ class Dollar
   end
 
   def times(times)
-    @amount *= times
+    return Dollar.new(amount * times)
   end
 end
