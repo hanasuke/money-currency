@@ -10,6 +10,6 @@ class Dollar
   end
 
   def ==(obj)
-    return true
+    @amount == obj.amount
   end
 end
