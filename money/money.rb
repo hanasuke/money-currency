@@ -7,7 +7,7 @@ class Money
     end
 
     def franc(amount)
-      return Franc.new(amount)
+      return Franc.new(amount, nil)
     end
   end
 
