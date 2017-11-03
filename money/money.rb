@@ -1,8 +1,14 @@
 class Money
   attr_reader :amount
 
-  def self.dollar(amount)
-    return Dollar.new(amount)
+  class << self
+    def dollar(amount)
+      return Dollar.new(amount)
+    end
+
+    def franc(amount)
+      return Franc.new(amount)
+    end
   end
 
  def ==(obj)
