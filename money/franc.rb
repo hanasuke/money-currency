@@ -5,6 +5,10 @@ class Franc < Money
     @amount = amount
   end
 
+  def currency
+    return "CHF"
+  end
+
   def times(times)
     return Franc.new(amount * times)
   end

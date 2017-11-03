@@ -11,6 +11,10 @@ class Money
     end
   end
 
+  def currency
+    raise 'Abstract class error'
+  end
+
  def ==(obj)
     @amount == obj.amount && self.class == obj.class
   end

@@ -5,6 +5,10 @@ class Dollar < Money
     @amount = amount
   end
 
+  def currency
+    return "USD"
+  end
+
   def times(times)
     return Dollar.new(amount * times)
   end
