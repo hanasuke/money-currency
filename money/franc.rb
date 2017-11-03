@@ -11,6 +11,6 @@ class Franc < Money
   end
 
   def times(times)
-    return Franc.new(amount * times, nil)
+    return Money.franc(amount * times)
   end
 end
