@@ -3,7 +3,7 @@ class Money
 
   class << self
     def dollar(amount)
-      return Dollar.new(amount)
+      return Dollar.new(amount, 'USD')
     end
 
     def franc(amount)
