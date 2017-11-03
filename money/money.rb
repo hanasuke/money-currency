@@ -15,12 +15,13 @@ class Money
     raise 'Abstract class error'
   end
 
- def ==(obj)
-    @amount == obj.amount && self.class == obj.class
+  def initialize(amount, currency)
+    @amount = amount
+    @currency = currency
   end
 
-  def initialize
-    raise 'Abstract class error!'
+  def ==(obj)
+    @amount == obj.amount && self.class == obj.class
   end
 
   def times(times)
