@@ -1,18 +1,14 @@
 class Money
-  attr_reader :amount
+  attr_reader :amount, :currency
 
   class << self
     def dollar(amount)
-      return Dollar.new(amount, 'USD')
+      return self.new(amount, 'USD')
     end
 
     def franc(amount)
-      return Franc.new(amount, 'CHF')
+      return self.new(amount, 'CHF')
     end
-  end
-
-  def currency
-    raise 'Abstract class error'
   end
 
   def initialize(amount, currency)
@@ -21,10 +17,18 @@ class Money
   end
 
   def ==(obj)
-    @amount == obj.amount && self.class == obj.class
+    @amount == obj.amount && self.class == obj.class && self.currency == obj.currency
   end
 
   def times(times)
-    raise 'Abstract method error!'
+    return Money.new(@amount * times, @currency)
+  end
+
+  def equals?(money)
+    return @amount == money&.amount && @currency == money&.currency
+  end
+
+  def to_s()
+    return amount.to_s + currency
   end
 end
